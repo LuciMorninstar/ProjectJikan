@@ -13,7 +13,7 @@ const MainLayout = () => {
     <div className="flex flex-grow overflow-hidden">
  
    <Sidebar/>
-    <div className="flex-grow overflow-y-auto">
+    <div className="flex-grow overflow-y-auto px-4 py-4">
    <Outlet/>
    </div>
    </div>

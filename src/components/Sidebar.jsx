@@ -5,10 +5,21 @@ import { FaFireFlameCurved } from 'react-icons/fa6';
 
 import { FaUserCircle } from "react-icons/fa";
 
+import { NavLink } from 'react-router-dom';
+
+
+
 
 
 
 const Sidebar = () => {
+
+
+
+
+
+  
+  
 
   const sidebaritems = 
 
@@ -35,14 +46,43 @@ const Sidebar = () => {
 
 
   return (
-    <section className = "bg-[#080808fd] w-[75px] h-screen border-2 border-r-gray-800">
+
+    <>
+
+    
+ 
+    <section className = "hidden sm:flex sm:flex-col sm:border sm:border-r-gray-800 ">
 
       {
 
      sidebaritems.map((item)=>(
-  <div key={item.icon} className = "border-1 border-blue-500 w-full h-max flex flex-col items-center justify-center gap-y-1 p-3 ">
-            <div className = "text-white text-2xl">{item.icon}</div>
-            <span className = "text-white text-sm">{item.title}</span>
+
+      
+
+       <div key={item.icon} className = "group w-full h-max flex flex-col items-center justify-center gap-1 p-3 transition-all duration-75 ease-in-out hover:bg-blue-200 rounded-md active:bg-blue-200">
+            <div className = " group-hover:text-[#3e44fe] active:text-[#3e44fe] text-white text-2xl">{item.icon}</div>
+            <span className = "group-hover:text-[#3e44fe] active:text-[#3e44fe] text-white text-sm">{item.title}</span>
+          </div>
+
+     )) 
+        
+      }
+
+    </section>
+
+
+
+    <section className = "sm:hidden absolute bottom-0 bg-[#080808fd] w-full flex flex-row items-end full justify-end border-2 border-r-gray-800  ">
+
+      {
+
+     sidebaritems.map((item)=>(
+
+      
+
+       <div key={item.icon} className = "group w-full h-max flex flex-col items-center justify-center gap-1 p-3 transition-all duration-75 ease-in-out hover:bg-blue-200 rounded-md active:bg-blue-200">
+            <div className = " group-hover:text-[#3e44fe] active:text-[#3e44fe] text-white text-2xl">{item.icon}</div>
+            <span className = "group-hover:text-[#3e44fe] active:text-[#3e44fe] text-white text-sm">{item.title}</span>
           </div>
 
      )) 
@@ -50,11 +90,11 @@ const Sidebar = () => {
       }
 
 
-
-   
-
-
     </section>
+
+
+</>
+
   )
 }
 
