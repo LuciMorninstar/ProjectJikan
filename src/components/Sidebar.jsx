@@ -51,15 +51,15 @@ const Sidebar = () => {
 
     
  
-    <section className = "hidden sm:flex sm:flex-col sm:border sm:border-r-gray-800 ">
+    <section className = "hidden md:flex md:flex-col md:border md:border-r-gray-800 ">
 
       {
 
-     sidebaritems.map((item)=>(
+     sidebaritems.map((item,index)=>(
 
       
 
-       <div key={item.icon} className = "group w-full h-max flex flex-col items-center justify-center gap-1 p-3 transition-all duration-75 ease-in-out hover:bg-blue-200 rounded-md active:bg-blue-200">
+       <div key={index} className = "group w-full h-max flex flex-col items-center justify-center gap-1 p-3 transition-all duration-75 ease-in-out hover:bg-blue-200 rounded-md active:bg-blue-200">
             <div className = " group-hover:text-[#3e44fe] active:text-[#3e44fe] text-white text-2xl">{item.icon}</div>
             <span className = "group-hover:text-[#3e44fe] active:text-[#3e44fe] text-white text-sm">{item.title}</span>
           </div>
@@ -76,11 +76,11 @@ const Sidebar = () => {
 
       {
 
-     sidebaritems.map((item)=>(
+     sidebaritems.map((item,index)=>(
 
       
 
-       <div key={item.icon} className = "group w-full h-max flex flex-col items-center justify-center gap-1 p-3 transition-all duration-75 ease-in-out hover:bg-blue-200 rounded-md active:bg-blue-200">
+       <div key={index} className = "group w-full h-max flex flex-col items-center justify-center gap-1 p-3 transition-all duration-75 ease-in-out hover:bg-blue-200 rounded-md active:bg-blue-200">
             <div className = " group-hover:text-[#3e44fe] active:text-[#3e44fe] text-white text-2xl">{item.icon}</div>
             <span className = "group-hover:text-[#3e44fe] active:text-[#3e44fe] text-white text-sm">{item.title}</span>
           </div>
