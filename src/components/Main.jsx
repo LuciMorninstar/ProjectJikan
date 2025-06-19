@@ -7,29 +7,43 @@ import {useState, useEffect} from "react";
 
 const Main = () => {
 
-const [animelist, setAnimeList] = useState([]);
-const [isLoading, setIsLoading] = useState(false);
+  const [animelist, setAnimeList] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(()=>{
+
+    const fetchdata = async()=>{
+      const response = await fetch("https://api.jikan.moe/v4/top/anime");
+      const data = await response.json();
+    
+      const insidedata = data.data;
+      setAnimeList(insidedata);
+      console.log(insidedata);
+
+        
+    }
+   
+
+    fetchdata();
+
+  
 
 
-useEffect(()=>{
-  const fetch = async ()=>{
-    const response = await fetch ("https://api.jikan.moe/v4/top/anime");
-    const data = await response.json();
-    console.log(data);
 
-  }
 
-  fetch();
-},[])
+  },[])
+
+    //  console.log(animelist,"list");
   
   return (
 
     <>
-    <section className = "bg-green-500w-full h-max grid grid-cols-3  lg:grid-cols-5 gap-5 ">
+    
+    <section className = "bg-green-500w-full h-max grid grid-cols-3  lg:grid-cols-5 gap-3 ">
 
   {
     
-      animeList.map((anime,index)=>(
+      animelist.map((anime,index)=>(
         <Card key ={index} anime = {anime}/>
         
       ))
