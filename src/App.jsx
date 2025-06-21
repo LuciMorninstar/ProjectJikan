@@ -4,6 +4,7 @@ import { createBrowserRouter,createRoutesFromElements, Route, RouterProvider } f
 import MainLayout from './layout/MainLayout'
 import HomePage from './pages/HomePage'
 import About from './pages/About'
+import Trending from './pages/Trending'
 
 const App = () => {
 
@@ -13,6 +14,7 @@ const App = () => {
 
         <Route index element={<HomePage/>}/>
         <Route path = "/about" element={<About/>}/>
+        <Route path = "/trending" element = {<Trending/>}/>
 
 
       </Route>
